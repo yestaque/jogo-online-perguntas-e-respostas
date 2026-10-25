@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b1d">
+  <title>Quiz Tech Pro</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/questions.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#" id="home-link">QUIZ<span>TECH</span></a>
+    <div class="profile">
+      <span id="level-badge">Nível 1</span>
+      <span id="profile-name">Jogador</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home-screen" class="panel">
+      <p class="eyebrow">SEU PRÓXIMO DESAFIO COMEÇA AQUI</p>
+      <h1>Teste sua mente.<br><span>Suba no ranking.</span></h1>
+      <p class="muted">Responda rápido, ganhe XP e desbloqueie conquistas.</p>
+
+      <label for="player-name">Seu nome de jogador</label>
+      <input id="player-name" maxlength="20" placeholder="Digite seu nome">
+
+      <h2>Escolha uma categoria</h2>
+      <div id="category-list" class="categories"></div>
+
+      <h2>Dificuldade</h2>
+      <div class="difficulty">
+        <button class="difficulty-btn selected" data-difficulty="facil">Fácil</button>
+        <button class="difficulty-btn" data-difficulty="medio">Médio</button>
+        <button class="difficulty-btn" data-difficulty="dificil">Difícil</button>
+      </div>
+
+      <button id="start-btn" class="primary full">Começar desafio →</button>
+    </section>
+
+    <section id="quiz-screen" class="panel hidden">
+      <div class="quiz-meta">
+        <span id="question-counter">Pergunta 1/5</span>
+        <span id="timer">⏱ 15s</span>
+        <span id="score">⭐ 0 pontos</span>
+      </div>
+
+      <div class="progress">
+        <div id="progress-bar"></div>
+      </div>
+
+      <p id="question-category" class="eyebrow"></p>
+      <h2 id="question-text">Pergunta</h2>
+      <div id="answer-list" class="answers"></div>
+      <p id="answer-feedback" aria-live="polite"></p>
+      <button id="next-btn" class="primary full hidden">Próxima pergunta →</button>
+    </section>
+
+    <section id="result-screen" class="panel hidden">
+      <p class="eyebrow">DESAFIO CONCLUÍDO</p>
+      <h1 id="result-title">Mandou bem!</h1>
+      <p id="final-score" class="big-score">0 pontos</p>
+      <p id="result-summary" class="muted"></p>
+      <div id="new-achievements" class="achievements"></div>
+      <button id="again-btn" class="primary full">Jogar novamente</button>
+      <button id="home-btn" class="secondary full">Voltar ao início</button>
+    </section>
+
+    <section class="panel">
+      <h2>🏆 Ranking deste navegador</h2>
+      <p class="muted">Melhores resultados salvos neste dispositivo.</p>
+      <ol id="leaderboard" class="leaderboard"></ol>
+    </section>
+
+    <section class="panel">
+      <h2>🎖️ Suas conquistas</h2>
+      <div id="achievement-list" class="achievements"></div>
+    </section>
+  </main>
+
+  <footer>QUIZ TECH PRO · Aprenda, jogue e evolua.</footer>
+</body>
+</html>
